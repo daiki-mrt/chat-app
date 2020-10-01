@@ -1,68 +1,24 @@
 <div class="chat-header">
   <div class="chat-header-left">
-    <a href="" class="current-room">hogefuga</a>
+    <a href="" class="current-room"><%= @room.name %></a>
   </div>
   <div class="chat-header-right">
-    <a href="" class="delete-chat-btn">チャットを終了する</a>
+    <%= link_to "チャットを終了する", room_path(@room), method: "delete", class: "delete-chat-btn" %>
+    <%# <a href="" class="delete-chat-btn">チャットを終了する</a> %>
   </div>
 </div>
+
 <div class="chat-messages">
-  <div class="message">
-    <div class="upper-message">
-      <p class="post-user">Tom</p>
-      <p class="date">2020/9/30(Wed) 17:58:30</p>
-    </div>
-    <div class="lower-message">
-      <p class="text">おはよう</p>
-    </div>      
-  </div>
-  <div class="message">
-    <div class="upper-message">
-      <p class="post-user">Tom</p>
-      <p class="date">2020/9/30(Wed) 17:58:30</p>
-    </div>
-    <div class="lower-message">
-      <p class="text">おはよう</p>
-    </div>      
-  </div>
-  <div class="message">
-    <div class="upper-message">
-      <p class="post-user">Tom</p>
-      <p class="date">2020/9/30(Wed) 17:58:30</p>
-    </div>
-    <div class="lower-message">
-      <p class="text">おはよう</p>
-    </div>      
-  </div>
-  <div class="message">
-    <div class="upper-message">
-      <p class="post-user">Tom</p>
-      <p class="date">2020/9/30(Wed) 17:58:30</p>
-    </div>
-    <div class="lower-message">
-      <p class="text">おはよう</p>
-    </div>      
-  </div>
-  <div class="message">
-    <div class="upper-message">
-      <p class="post-user">Tom</p>
-      <p class="date">2020/9/30(Wed) 17:58:30</p>
-    </div>
-    <div class="lower-message">
-      <p class="text">おはよう</p>
-    </div>      
-  </div>
-  
+  <%= render partial: "message", collection: @messages %>
 </div>
-<div class="form-area">
-  <form class="form-area-left">
-    <input class="message-form" placeholder="type a message">
+
+<%= form_with model: [@room, @message], html: {class: "form"}, local: true do |f| %>
+  <div class="form-input">
+    <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
     <label class="form-image">
       <span class="image-file">画像</span>
-      <input type="file" class="hidden">
-    </label>    
-  </form>
-  <div class="form-area-right">
-    <input type="submit" class="send-btn" value="送信">
+      <%= f.file_field :image, class: 'hidden' %>
+    </label>
   </div>
-</div>
+  <%= f.submit '送信', class: 'form-submit' %>
+<% end %>
