@@ -6,53 +6,9 @@
     <a href="" class="delete-chat-btn">チャットを終了する</a>
   </div>
 </div>
+
 <div class="chat-messages">
-  <div class="message">
-    <div class="upper-message">
-      <p class="post-user">Tom</p>
-      <p class="date">2020/9/30(Wed) 17:58:30</p>
-    </div>
-    <div class="lower-message">
-      <p class="text">おはよう</p>
-    </div>      
-  </div>
-  <div class="message">
-    <div class="upper-message">
-      <p class="post-user">Tom</p>
-      <p class="date">2020/9/30(Wed) 17:58:30</p>
-    </div>
-    <div class="lower-message">
-      <p class="text">おはよう</p>
-    </div>      
-  </div>
-  <div class="message">
-    <div class="upper-message">
-      <p class="post-user">Tom</p>
-      <p class="date">2020/9/30(Wed) 17:58:30</p>
-    </div>
-    <div class="lower-message">
-      <p class="text">おはよう</p>
-    </div>      
-  </div>
-  <div class="message">
-    <div class="upper-message">
-      <p class="post-user">Tom</p>
-      <p class="date">2020/9/30(Wed) 17:58:30</p>
-    </div>
-    <div class="lower-message">
-      <p class="text">おはよう</p>
-    </div>      
-  </div>
-  <div class="message">
-    <div class="upper-message">
-      <p class="post-user">Tom</p>
-      <p class="date">2020/9/30(Wed) 17:58:30</p>
-    </div>
-    <div class="lower-message">
-      <p class="text">おはよう</p>
-    </div>      
-  </div>
-  
+  <%= render partial: "message", collection: @messages %>
 </div>
 
 <%= form_with model: [@room, @message], html: {class: "form"}, local: true do |f| %>
