@@ -118,25 +118,34 @@
   margin-bottom: 10px;
 }
 
-.form-area {
-  background-color: #dddddd;
+.form {
+  background-color: #DDDDDD;
   height: 90px;
-  padding: 20px 40px;  
+  padding: 20px 40px;
   display: flex;
-  justify-content: space-between;
 }
 
-.form-area-left {
-  width: 100%;
-  display: flex;
+.form-input {
   background-color: white;
+  display: flex;
+  width: 100%;
 }
 
-.message-form {
-  height: 50px;
-  padding-left: 10px;
+.form-message {
   border: none;
+  height: 50px;
   width: 100%;
+  padding-left: 10px;
+}
+
+.form-submit {
+  background-color: #38AEF0;
+  border: none;
+  color: white;
+  font-size: 16px;
+  height: 50px;
+  margin-left: 15px;
+  padding: 0 20px;
 }
 
 .form-image {
@@ -151,14 +160,4 @@
 
 .hidden {
   display: none;
-}
-
-.send-btn {
-  height: 50px;
-  padding: 0 20px;
-  background-color: #38aef0;
-  color: white;
-  font-size: 16px;
-  margin-left: 15px;
-  border: none;
 }
