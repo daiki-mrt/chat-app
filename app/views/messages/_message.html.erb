@@ -1,7 +1,7 @@
   <div class="message">
       <div class="upper-message">
         <p class="post-user"><%= message.user.name %></p>
-        <p class="date"><%= message.created_at %></p>
+        <p class="date"><%= l message.created_at %></p>
       </div>
       <div class="lower-message">
         <p class="text"><%= message.content %></p>
