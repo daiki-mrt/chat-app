@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # ユーザー管理機能の実装
 gem 'devise'
+
+
+gem 'pry-rails'
