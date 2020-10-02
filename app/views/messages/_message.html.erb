@@ -5,5 +5,6 @@
       </div>
       <div class="lower-message">
         <p class="text"><%= message.content %></p>
+        <%= image_tag message.image.variant(resize:"500x500"), class: "message-image" if message.image.attached? %>
       </div>
   </div>
